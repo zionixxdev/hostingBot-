@@ -759,7 +759,7 @@ def start_command(message):
     else:
         for row in COMMAND_BUTTONS_LAYOUT_USER_SPEC:
             markup.add(*[types.KeyboardButton(text) for text in row]) 
- safe_send_message(message.chat.id, welcome_msg, reply_markup=markup)
+    safe_send_message(message.chat.id, welcome_msg, reply_markup=markup)
 
 @bot.message_handler(content_types=['document'])
 def handle_file_upload(message): 
