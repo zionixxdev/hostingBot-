@@ -99,7 +99,7 @@ def keep_alive():
     print("🌐 Flask Keep-Alive server started.")
     
 # --- Configuration --
-TOKEN = os.getenv('TOKEN')
+TOKEN = os.getenv('TOKEN','7701122309:AAFAkLj4Ww1qGpQYkgVg1mPRVVEjMQ9sn7c')
 OWNER_ID = int(os.getenv('OWNER_ID', '8570940776'))
 ADMIN_ID = int(os.getenv('ADMIN_ID', '8570940776'))
 YOUR_USERNAME = os.getenv('BOT_USERNAME', '@iownphp')
@@ -758,8 +758,8 @@ def start_command(message):
             markup.add(*[types.KeyboardButton(text) for text in row])
     else:
         for row in COMMAND_BUTTONS_LAYOUT_USER_SPEC:
-            markup.add(*[types.KeyboardButton(text) for text in row]) 
-    safe_send_message(message.chat.id, welcome_msg, reply_markup=markup)
+            markup.add(*[types.KeyboardButton(text) for text in row])
+    safe_send_message(message.chat.id, welcome_msg,reply_markup=markup)
 
 @bot.message_handler(content_types=['document'])
 def handle_file_upload(message): 
